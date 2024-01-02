@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [products, setProducts] = useState([]);
@@ -25,7 +26,9 @@ function HomePage() {
     <div>
       <div className="app-wrapper">
         <h1 className="app-title">Products</h1>
-        <button>Create Product</button>
+        {/* //เมื่อผู้ใช้งานกดปุ่ม “Create Product” ในหน้า Home Page  */}
+        {/* ผู้ใช้งานจะถูกพาไปยังหน้าเว็บไซต์ Create Product Page ที่มีหน้าแบบฟอร์มเอาไว้สร้างสินค้า */}
+        <Link to="/CreateProductPage">Create Product</Link>
       </div>
       <div className="product-list">
         {products.map((product) => {
